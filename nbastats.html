@@ -1,0 +1,1469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NBA Stats Tracker</title>
+  <link rel="stylesheet" href="nbastats.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+<body>
+  <img id ='logo' src='https://pbs.twimg.com/profile_images/1392258537993211905/kYxkTjiE_400x400.jpg'>
+
+    <div class="homer">
+        <button id="homebutton" > GO BACK TO LIVE </button>
+    </div>
+    
+  <form id="form1">
+    <p>GAME DATE IN (YEAR-MONTH-DAY) FORMAT </p>
+    Example: 2022-01-12 <input type = "text" placeholder = "Enter Date..." id="gamedate" > 
+
+  <button type ='submit' id="SubmitButton"> Submit </button>
+  </form>
+  
+  <h1 id="title-text">NBA LIVE STATS AND STREAMS </h1>
+  <div id="place">
+    <h2 id = "home1" > Home </h2>
+    <h2 id="away1" > Away </h2>
+  </div>
+  
+  <div id="teamnames">
+    
+    <h2 id="0team1name"></h2>   
+    <h2 id="0team2name"></h2>
+    
+  
+  </div>
+  
+  <div id='P-STATS0'>
+
+  
+  <button id='0homebut' data-modal-target="#modal0" style="display: none;">Player Stats</button>
+  <div class="modal" id="modal0">
+    <div class="modal-header">
+      <div class="title">Example Modal</div>
+      <button data-close-button class="close-button">&times;</button>
+    </div>
+    <div class="modal-body"  >
+      <table> 
+        <thead>
+          <tr> 
+            <th> Player </th>
+            <th> Minutes </th>
+            <th> Points </th>
+            <th> Rebounds </th>
+            <th> Assists </th>
+            <th> Blocks </th>
+            <th> Steals </th>
+            <th> FG%</th>
+            <th> 3-PT% </th>
+            <th> Fouls </th>
+            <th> Turnovers </th>
+            <th> +/-</th>
+    
+    
+    
+    
+    
+    
+          </tr>
+        </thead>
+        <tbody id="0box-score-body-home">
+          <!-- Table body will be dynamically populated with player stats -->
+           
+        </tbody> 
+      </table>
+
+      
+    </div>
+
+  </div>
+  <div id="overlay"></div> 
+
+  <a id='0L' href="" target="_blank" style="display: none;"> Watch Live  </a>
+
+
+  
+  <button id='0awaybut' data-modal-target="#modal1" style="display: none;" >Player Stats</button>
+  <div class="modal" id="modal1">
+    <div class="modal-header">
+      <div class="title">Example Modal</div>
+      <button data-close-button class="close-button">&times;</button>
+    </div>
+    <div class="modal-body"  >
+      <table> 
+        <thead>
+          <tr> 
+            <th> Player </th>
+            <th> Minutes </th>
+            <th> Points </th>
+            <th> Rebounds </th>
+            <th> Assists </th>
+            <th> Blocks </th>
+            <th> Steals </th>
+            <th> FG%</th>
+            <th> 3-PT% </th>
+            <th> Fouls </th>
+            <th> Turnovers </th>
+            <th> +/-</th>
+    
+    
+    
+    
+    
+    
+          </tr>
+        </thead>
+        <tbody id="0box-score-body-away">
+          <!-- Table body will be dynamically populated with player stats -->
+           
+        </tbody> 
+      </table>
+
+      
+    </div>
+  </div>
+  <div id="overlay"></div> 
+
+
+</div> 
+  
+  
+  
+  <div id="scores">
+    <h2 id="0score1"> </h2>
+    <h2 id="0score2"> </h2>
+  </div>
+
+
+
+  <div id="teamnames">
+    <h2 id="1team1name"> </h2>   
+    <h2 id="1team2name">  </h2>
+  </div>
+
+</div>
+
+
+
+<div id='P-STATS0'>
+
+  
+  <button id='1homebut' data-modal-target="#modal2" style="display: none;" >Player Stats</button>
+  <div class="modal" id="modal2">
+    <div class="modal-header">
+      <div class="title">Example Modal</div>
+      <button data-close-button class="close-button">&times;</button>
+    </div>
+    <div class="modal-body"  >
+      <table> 
+        <thead>
+          <tr> 
+            <th> Player </th>
+            <th> Minutes </th>
+            <th> Points </th>
+            <th> Rebounds </th>
+            <th> Assists </th>
+            <th> Blocks </th>
+            <th> Steals </th>
+            <th> FG%</th>
+            <th> 3-PT% </th>
+            <th> Fouls </th>
+            <th> Turnovers </th>
+            <th> +/-</th>
+    
+    
+    
+    
+    
+    
+          </tr>
+        </thead>
+        <tbody id="1box-score-body-home">
+          <!-- Table body will be dynamically populated with player stats -->
+           
+        </tbody> 
+      </table>
+
+      
+    </div>
+  </div>
+  <div id="overlay"></div> 
+
+  <a id='1L' href="" target="_blank" style="display: none;"> Watch Live  </a>
+
+  <button id='1awaybut' data-modal-target="#modal3" style="display: none;" >Player Stats</button>
+  <div class="modal" id="modal3">
+    <div class="modal-header">
+      <div class="title">Example Modal</div>
+      <button data-close-button class="close-button">&times;</button>
+    </div>
+    <div class="modal-body"  >
+      <table> 
+        <thead>
+          <tr> 
+            <th> Player </th>
+            <th> Minutes </th>
+            <th> Points </th>
+            <th> Rebounds </th>
+            <th> Assists </th>
+            <th> Blocks </th>
+            <th> Steals </th>
+            <th> FG%</th>
+            <th> 3-PT% </th>
+            <th> Fouls </th>
+            <th> Turnovers </th>
+            <th> +/-</th>
+    
+    
+    
+    
+    
+    
+          </tr>
+        </thead>
+        <tbody id="1box-score-body-away">
+          <!-- Table body will be dynamically populated with player stats -->
+           
+        </tbody> 
+      </table>
+
+      
+    </div>
+  </div>
+  <div id="overlay"></div> 
+
+
+</div> 
+
+
+  
+  <div id="scores">
+    <h2 id="1score1"> </h2>
+    <h2 id="1score2">  </h2>
+
+</div>
+    <div id="teamnames">
+        <h2 id="2team1name"> </h2>   
+        <h2 id="2team2name">  </h2>
+      </div>
+      
+
+      
+  <div id='P-STATS0'>
+
+  
+    <button id='2homebut' data-modal-target="#modal4" style="display: none;" >Player Stats</button>
+    <div class="modal" id="modal4">
+      <div class="modal-header">
+        <div class="title">Example Modal</div>
+        <button data-close-button class="close-button">&times;</button>
+      </div>
+      <div class="modal-body"  >
+        <table> 
+          <thead>
+            <tr> 
+              <th> Player </th>
+            <th> Minutes </th>
+            <th> Points </th>
+            <th> Rebounds </th>
+            <th> Assists </th>
+            <th> Blocks </th>
+            <th> Steals </th>
+            <th> FG%</th>
+            <th> 3-PT% </th>
+            <th> Fouls </th>
+            <th> Turnovers </th>
+            <th> +/-</th>
+      
+      
+      
+      
+      
+      
+            </tr>
+          </thead>
+          <tbody id="2box-score-body-home">
+            <!-- Table body will be dynamically populated with player stats -->
+             
+          </tbody> 
+        </table>
+  
+        
+      </div>
+    </div>
+    <div id="overlay"></div> 
+
+    <a id='2L' href="" target="_blank" style="display: none;"> Watch Live  </a>
+
+  
+    <button id='2awaybut' data-modal-target="#modal5" style="display: none;" >Player Stats</button>
+    <div class="modal" id="modal5">
+      <div class="modal-header">
+        <div class="title">Example Modal</div>
+        <button data-close-button class="close-button">&times;</button>
+      </div>
+      <div class="modal-body"  >
+        <table> 
+          <thead>
+            <tr> 
+              <th> Player </th>
+            <th> Minutes </th>
+            <th> Points </th>
+            <th> Rebounds </th>
+            <th> Assists </th>
+            <th> Blocks </th>
+            <th> Steals </th>
+            <th> FG%</th>
+            <th> 3-PT% </th>
+            <th> Fouls </th>
+            <th> Turnovers </th>
+            <th> +/-</th>
+      
+      
+      
+      
+      
+      
+            </tr>
+          </thead>
+          <tbody id="2box-score-body-away">
+            <!-- Table body will be dynamically populated with player stats -->
+             
+          </tbody> 
+        </table>
+  
+        
+      </div>
+    </div>
+    <div id="overlay"></div> 
+  
+  
+  </div> 
+
+      <div id="scores">
+        <h2 id="2score1"> </h2>
+        <h2 id="2score2">  </h2>   
+
+    </div>
+        <div id="teamnames">
+            <h2 id="3team1name"></h2>   
+            <h2 id="3team2name"></h2>
+          </div>
+          
+
+          
+  <div id='P-STATS0'>
+
+  
+    <button id='3homebut' data-modal-target="#modal6" style="display: none;" >Player Stats</button>
+    <div class="modal" id="modal6">
+      <div class="modal-header">
+        <div class="title">Example Modal</div>
+        <button data-close-button class="close-button">&times;</button>
+      </div>
+      <div class="modal-body"  >
+        <table> 
+          <thead>
+            <tr> 
+              <th> Player </th>
+              <th> Minutes </th>
+              <th> Points </th>
+              <th> Rebounds </th>
+              <th> Assists </th>
+              <th> Blocks </th>
+              <th> Steals </th>
+              <th> FG%</th>
+              <th> 3-PT% </th>
+              <th> Fouls </th>
+              <th> Turnovers </th>
+              <th> +/-</th>
+      
+      
+      
+      
+      
+            </tr>
+          </thead>
+          <tbody id="3box-score-body-home">
+            <!-- Table body will be dynamically populated with player stats -->
+             
+          </tbody> 
+        </table>
+  
+        
+      </div>
+    </div>
+    <div id="overlay"></div> 
+  
+    <a id='3L' href="" target="_blank" style="display: none;"> Watch Live  </a>
+
+    <button id='3awaybut' data-modal-target="#modal7" style="display: none;" >Player Stats</button>
+    <div class="modal" id="modal7">
+      <div class="modal-header">
+        <div class="title">Example Modal</div>
+        <button data-close-button class="close-button">&times;</button>
+      </div>
+      <div class="modal-body"  >
+        <table> 
+          <thead>
+            <tr> 
+              <th> Player </th>
+            <th> Minutes </th>
+            <th> Points </th>
+            <th> Rebounds </th>
+            <th> Assists </th>
+            <th> Blocks </th>
+            <th> Steals </th>
+            <th> FG%</th>
+            <th> 3-PT% </th>
+            <th> Fouls </th>
+            <th> Turnovers </th>
+            <th> +/-</th>
+      
+      
+      
+      
+      
+      
+            </tr>
+          </thead>
+          <tbody id="3box-score-body-away">
+            <!-- Table body will be dynamically populated with player stats -->
+             
+          </tbody> 
+        </table>
+  
+        
+      </div>
+    </div>
+    <div id="overlay"></div> 
+
+  
+  </div> 
+
+          <div id="scores">
+            <h2 id="3score1"> </h2>
+            <h2 id="3score2"> </h2>
+          </div>
+        
+
+          <div id="teamnames">
+            <h2 id="4team1name"></h2>   
+            <h2 id="4team2name"></h2>
+          </div>
+          
+
+
+          
+  <div id='P-STATS0'>
+
+
+    <button id='4homebut' data-modal-target="#modal8" style="display: none;" >Player Stats</button>
+    <div class="modal" id="modal8">
+      <div class="modal-header">
+        <div class="title">Example Modal</div>
+        <button data-close-button class="close-button">&times;</button>
+      </div>
+      <div class="modal-body"  >
+        <table> 
+          <thead>
+            <tr> 
+              <th> Player </th>
+            <th> Minutes </th>
+            <th> Points </th>
+            <th> Rebounds </th>
+            <th> Assists </th>
+            <th> Blocks </th>
+            <th> Steals </th>
+            <th> FG%</th>
+            <th> 3-PT% </th>
+            <th> Fouls </th>
+            <th> Turnovers </th>
+            <th> +/-</th>
+      
+      
+      
+      
+      
+      
+            </tr>
+          </thead>
+          <tbody id="4box-score-body-home">
+            <!-- Table body will be dynamically populated with player stats -->
+             
+          </tbody> 
+        </table>
+  
+        
+      </div>
+    </div>
+    <div id="overlay"></div> 
+  
+    <a id='4L' href="" target="_blank" style="display: none;"> Watch Live  </a>
+
+    <button id='4awaybut' data-modal-target="#modal9" style="display: none;" >Player Stats</button>
+    <div class="modal" id="modal9">
+      <div class="modal-header">
+        <div class="title">Example Modal</div>
+        <button data-close-button class="close-button">&times;</button>
+      </div>
+      <div class="modal-body"  >
+        <table> 
+          <thead>
+            <tr> 
+              <th> Player </th>
+            <th> Minutes </th>
+            <th> Points </th>
+            <th> Rebounds </th>
+            <th> Assists </th>
+            <th> Blocks </th>
+            <th> Steals </th>
+            <th> FG%</th>
+            <th> 3-PT% </th>
+            <th> Fouls </th>
+            <th> Turnovers </th>
+            <th> +/-</th>
+      
+      
+      
+      
+      
+      
+            </tr>
+          </thead>
+          <tbody id="4box-score-body-away">
+            <!-- Table body will be dynamically populated with player stats -->
+             
+          </tbody> 
+        </table>
+  
+        
+      </div>
+    </div>
+    <div id="overlay"></div> 
+  
+
+  </div> 
+
+          <div id="scores">
+            <h2 id="4score1"> </h2>
+            <h2 id="4score2"> </h2>
+          </div>
+        
+
+          <div id="teamnames">
+            <h2 id="5team1name"></h2>   
+            <h2 id="5team2name"></h2>
+          </div>
+          
+          
+  <div id='P-STATS0'>
+
+  
+    <button id='5homebut' data-modal-target="#modal10" style="display: none;" >Player Stats</button>
+    <div class="modal" id="modal10">
+      <div class="modal-header">
+        <div class="title">Example Modal</div>
+        <button data-close-button class="close-button">&times;</button>
+      </div>
+      <div class="modal-body"  >
+        <table> 
+          <thead>
+            <tr> 
+              <th> Player </th>
+              <th> Minutes </th>
+              <th> Points </th>
+              <th> Rebounds </th>
+              <th> Assists </th>
+              <th> Blocks </th>
+              <th> Steals </th>
+              <th> FG%</th>
+              <th> 3-PT% </th>
+              <th> Fouls </th>
+              <th> Turnovers </th>
+              <th> +/-</th>
+      
+      
+      
+      
+      
+      
+            </tr>
+          </thead>
+          <tbody id="5box-score-body-home">
+            <!-- Table body will be dynamically populated with player stats -->
+             
+          </tbody> 
+        </table>
+  
+        
+      </div>
+    </div>
+    <div id="overlay"></div> 
+  
+    <a id='5L' href="" target="_blank" style="display: none;"> Watch Live  </a>
+
+    <button id='5awaybut' data-modal-target="#modal1" style="display: none;" >Player Stats</button>
+    <div class="modal" id="modal11">
+      <div class="modal-header">
+        <div class="title">Example Modal</div>
+        <button data-close-button class="close-button">&times;</button>
+      </div>
+      <div class="modal-body"  >
+        <table> 
+          <thead>
+            <tr> 
+              <th> Player </th>
+            <th> Minutes </th>
+            <th> Points </th>
+            <th> Rebounds </th>
+            <th> Assists </th>
+            <th> Blocks </th>
+            <th> Steals </th>
+            <th> FG%</th>
+            <th> 3-PT% </th>
+            <th> Fouls </th>
+            <th> Turnovers </th>
+            <th> +/-</th>
+      
+      
+      
+      
+      
+            </tr>
+          </thead>
+          <tbody id="5box-score-body-away">
+            <!-- Table body will be dynamically populated with player stats -->
+             
+          </tbody> 
+        </table>
+  
+        
+      </div>
+    </div>
+    <div id="overlay"></div> 
+  
+
+  </div> 
+          <div id="scores">
+            <h2 id="5score1"> </h2>
+            <h2 id="5score2"> </h2>
+          </div>
+
+          <div id="teamnames">
+            <h2 id="6team1name"></h2>   
+            <h2 id="6team2name"></h2>
+          </div>
+          <div id='P-STATS0'>
+
+  
+            <button id='6homebut' data-modal-target="#modal12" style="display: none;" >Player Stats</button>
+            <div class="modal" id="modal12">
+              <div class="modal-header">
+                <div class="title">Example Modal</div>
+                <button data-close-button class="close-button">&times;</button>
+              </div>
+              <div class="modal-body"  >
+                <table> 
+                  <thead>
+                    <tr> 
+                      <th> Player </th>
+            <th> Minutes </th>
+            <th> Points </th>
+            <th> Rebounds </th>
+            <th> Assists </th>
+            <th> Blocks </th>
+            <th> Steals </th>
+            <th> FG%</th>
+            <th> 3-PT% </th>
+            <th> Fouls </th>
+            <th> Turnovers </th>
+            <th> +/-</th>
+              
+              
+              
+              
+              
+              
+                    </tr>
+                  </thead>
+                  <tbody id="6box-score-body-home">
+                    <!-- Table body will be dynamically populated with player stats -->
+                     
+                  </tbody> 
+                </table>
+          
+                
+              </div>
+            </div>
+            <div id="overlay"></div> 
+          
+            <a id='6L' href="" target="_blank" style="display: none;"> Watch Live  </a>
+
+            <button id='6awaybut' data-modal-target="#modal3" style="display: none;" >Player Stats</button>
+            <div class="modal" id="modal13">
+              <div class="modal-header">
+                <div class="title">Example Modal</div>
+                <button data-close-button class="close-button">&times;</button>
+              </div>
+              <div class="modal-body"  >
+                <table> 
+                  <thead>
+                    <tr> 
+                      <th> Player </th>
+            <th> Minutes </th>
+            <th> Points </th>
+            <th> Rebounds </th>
+            <th> Assists </th>
+            <th> Blocks </th>
+            <th> Steals </th>
+            <th> FG%</th>
+            <th> 3-PT% </th>
+            <th> Fouls </th>
+            <th> Turnovers </th>
+            <th> +/-</th>
+              
+              
+              
+              
+              
+              
+                    </tr>
+                  </thead>
+                  <tbody id="6box-score-body-away">
+                    <!-- Table body will be dynamically populated with player stats -->
+                     
+                  </tbody> 
+                </table>
+          
+                
+              </div>
+            </div>
+            <div id="overlay"></div> 
+          
+          
+          </div> 
+          
+          <div id="scores">
+            <h2 id="6score1"> </h2>
+            <h2 id="6score2"> </h2>
+          </div>
+
+          <div id="teamnames">
+            <h2 id="7team1name"></h2>   
+            <h2 id="7team2name"></h2>
+          </div>
+          
+
+          <div id='P-STATS0'>
+
+  
+            <button id='7homebut' data-modal-target="#modal14" style="display: none;" >Player Stats</button>
+            <div class="modal" id="modal14">
+              <div class="modal-header">
+                <div class="title">Example Modal</div>
+                <button data-close-button class="close-button">&times;</button>
+              </div>
+              <div class="modal-body"  >
+                <table> 
+                  <thead>
+                    <tr> 
+                      <th> Player </th>
+            <th> Minutes </th>
+            <th> Points </th>
+            <th> Rebounds </th>
+            <th> Assists </th>
+            <th> Blocks </th>
+            <th> Steals </th>
+            <th> FG%</th>
+            <th> 3-PT% </th>
+            <th> Fouls </th>
+            <th> Turnovers </th>
+            <th> +/-</th>
+              
+              
+              
+              
+              
+              
+                    </tr>
+                  </thead>
+                  <tbody id="7box-score-body-home">
+                    <!-- Table body will be dynamically populated with player stats -->
+                     
+                  </tbody> 
+                </table>
+          
+                
+              </div>
+            </div>
+            <div id="overlay"></div> 
+          
+            <a id='7L' href="" target="_blank" style="display: none;"> Watch Live  </a>
+
+            <button id='7awaybut' data-modal-target="#modal5" style="display: none;" >Player Stats</button>
+            <div class="modal" id="modal15">
+              <div class="modal-header">
+                <div class="title">Example Modal</div>
+                <button data-close-button class="close-button">&times;</button>
+              </div>
+              <div class="modal-body"  >
+                <table> 
+                  <thead>
+                    <tr> 
+                      <th> Player </th>
+            <th> Minutes </th>
+            <th> Points </th>
+            <th> Rebounds </th>
+            <th> Assists </th>
+            <th> Blocks </th>
+            <th> Steals </th>
+            <th> FG%</th>
+            <th> 3-PT% </th>
+            <th> Fouls </th>
+            <th> Turnovers </th>
+            <th> +/-</th>
+              
+              
+              
+              
+              
+              
+                    </tr>
+                  </thead>
+                  <tbody id="7box-score-body-away">
+                    <!-- Table body will be dynamically populated with player stats -->
+                     
+                  </tbody> 
+                </table>
+          
+                
+              </div>
+            </div>
+            <div id="overlay"></div> 
+
+          
+          </div> 
+
+          <div id="scores">
+            <h2 id="7score1"> </h2>
+            <h2 id="7score2"> </h2>
+          </div>
+        
+          <div id="teamnames">
+            <h2 id="8team1name"></h2>   
+            <h2 id="8team2name"></h2>
+          </div>
+
+
+          <div id='P-STATS0'>
+
+  
+            <button id='8homebut' data-modal-target="#modal16" style="display: none;" >Player Stats</button>
+            <div class="modal" id="modal16">
+              <div class="modal-header">
+                <div class="title">Example Modal</div>
+                <button data-close-button class="close-button">&times;</button>
+              </div>
+              <div class="modal-body"  >
+                <table> 
+                  <thead>
+                    <tr> 
+                      <th> Player </th>
+            <th> Minutes </th>
+            <th> Points </th>
+            <th> Rebounds </th>
+            <th> Assists </th>
+            <th> Blocks </th>
+            <th> Steals </th>
+            <th> FG%</th>
+            <th> 3-PT% </th>
+            <th> Fouls </th>
+            <th> Turnovers </th>
+            <th> +/-</th>
+              
+              
+              
+              
+              
+              
+                    </tr>
+                  </thead>
+                  <tbody id="8box-score-body-home">
+                    <!-- Table body will be dynamically populated with player stats -->
+                     
+                  </tbody> 
+                </table>
+          
+                
+              </div>
+            </div>
+            <div id="overlay"></div> 
+          
+            <a id='8L' href="1" target="_blank" style="display: none;"> Watch Live  </a>
+
+            <button id='8awaybut' data-modal-target="#modal17" style="display: none;" >Player Stats</button>
+            <div class="modal" id="modal17">
+              <div class="modal-header">
+                <div class="title">Example Modal</div>
+                <button data-close-button class="close-button">&times;</button>
+              </div>
+              <div class="modal-body"  >
+                <table> 
+                  <thead>
+                    <tr> 
+                      <th> Player </th>
+            <th> Minutes </th>
+            <th> Points </th>
+            <th> Rebounds </th>
+            <th> Assists </th>
+            <th> Blocks </th>
+            <th> Steals </th>
+            <th> FG%</th>
+            <th> 3-PT% </th>
+            <th> Fouls </th>
+            <th> Turnovers </th>
+            <th> +/-</th>
+              
+              
+              
+              
+              
+                    </tr>
+                  </thead>
+                  <tbody id="8box-score-body-away">
+                    <!-- Table body will be dynamically populated with player stats -->
+                     
+                  </tbody> 
+                </table>
+          
+                
+              </div>
+            </div>
+            <div id="overlay"></div> 
+          
+
+          </div> 
+          
+          <div id="scores">
+            <h2 id="8score1"> </h2>
+            <h2 id="8score2"> </h2>
+          </div>
+            <div id="teamnames">
+            <h2 id="9team1name"></h2>   
+            <h2 id="9team2name"></h2>
+          </div>
+          
+          <div id='P-STATS0'>
+
+  
+            <button id='9homebut' data-modal-target="#modal18" style="display: none;" >Player Stats</button>
+            <div class="modal" id="modal18">
+              <div class="modal-header">
+                <div class="title">Example Modal</div>
+                <button data-close-button class="close-button">&times;</button>
+              </div>
+              <div class="modal-body"  >
+                <table> 
+                  <thead>
+                    <tr> 
+                      <th> Player </th>
+            <th> Minutes </th>
+            <th> Points </th>
+            <th> Rebounds </th>
+            <th> Assists </th>
+            <th> Blocks </th>
+            <th> Steals </th>
+            <th> FG%</th>
+            <th> 3-PT% </th>
+            <th> Fouls </th>
+            <th> Turnovers </th>
+            <th> +/-</th>
+              
+              
+              
+              
+              
+              
+                    </tr>
+                  </thead>
+                  <tbody id="9box-score-body-home">
+                    <!-- Table body will be dynamically populated with player stats -->
+                     
+                  </tbody> 
+                </table>
+          
+                
+              </div>
+            </div>
+            <div id="overlay"></div> 
+          
+            <a id='9L' href="1" target="_blank" style="display: none;"> Watch Live  </a>
+
+            <button id='9awaybut' data-modal-target="#modal19" style="display: none;" >Player Stats</button>
+            <div class="modal" id="modal19">
+              <div class="modal-header">
+                <div class="title">Example Modal</div>
+                <button data-close-button class="close-button">&times;</button>
+              </div>
+              <div class="modal-body"  >
+                <table> 
+                  <thead>
+                    <tr> 
+                      <th> Player </th>
+            <th> Minutes </th>
+            <th> Points </th>
+            <th> Rebounds </th>
+            <th> Assists </th>
+            <th> Blocks </th>
+            <th> Steals </th>
+            <th> FG%</th>
+            <th> 3-PT% </th>
+            <th> Fouls </th>
+            <th> Turnovers </th>
+            <th> +/-</th>
+              
+              
+              
+              
+                    </tr>
+                  </thead>
+                  <tbody id="9box-score-body-away">
+                    <!-- Table body will be dynamically populated with player stats -->
+                     
+                  </tbody> 
+                </table>
+          
+                
+              </div>
+            </div>
+            <div id="overlay"></div> 
+          
+          
+          </div> 
+          <div id="scores">
+            <h2 id="9score1"> </h2>
+            <h2 id="9score2"> </h2>
+          </div>
+
+          <div id="teamnames">
+            <h2 id="10team1name"></h2>   
+            <h2 id="10team2name"></h2>
+          </div>
+          
+
+          
+          <div id='P-STATS0'>
+
+  
+            <button id='10homebut' data-modal-target="#modal20" style="display: none;" >Player Stats</button>
+            <div class="modal" id="modal20">
+              <div class="modal-header">
+                <div class="title">Example Modal</div>
+                <button data-close-button class="close-button">&times;</button>
+              </div>
+              <div class="modal-body"  >
+                <table> 
+                  <thead>
+                    <tr> 
+                      <th> Player </th>
+            <th> Minutes </th>
+            <th> Points </th>
+            <th> Rebounds </th>
+            <th> Assists </th>
+            <th> Blocks </th>
+            <th> Steals </th>
+            <th> FG%</th>
+            <th> 3-PT% </th>
+            <th> Fouls </th>
+            <th> Turnovers </th>
+            <th> +/-</th>
+              
+              
+              
+              
+              
+              
+                    </tr>
+                  </thead>
+                  <tbody id="10box-score-body-home">
+                    <!-- Table body will be dynamically populated with player stats -->
+                     
+                  </tbody> 
+                </table>
+          
+                
+              </div>
+            </div>
+            <div id="overlay"></div> 
+          
+            <a id='10L' href="1" target="_blank" style="display: none;"> Watch Live  </a>
+
+            <button id='10awaybut' data-modal-target="#modal21" style="display: none;" >Player Stats</button>
+            <div class="modal" id="modal21">
+              <div class="modal-header">
+                <div class="title">Example Modal</div>
+                <button data-close-button class="close-button">&times;</button>
+              </div>
+              <div class="modal-body"  >
+                <table> 
+                  <thead>
+                    <tr> 
+                      <th> Player </th>
+            <th> Minutes </th>
+            <th> Points </th>
+            <th> Rebounds </th>
+            <th> Assists </th>
+            <th> Blocks </th>
+            <th> Steals </th>
+            <th> FG%</th>
+            <th> 3-PT% </th>
+            <th> Fouls </th>
+            <th> Turnovers </th>
+            <th> +/-</th>
+              
+              
+              
+              
+              
+              
+                    </tr>
+                  </thead>
+                  <tbody id="10box-score-body-away">
+                    <!-- Table body will be dynamically populated with player stats -->
+                     
+                  </tbody> 
+                </table>
+          
+                
+              </div>
+            </div>
+            <div id="overlay"></div> 
+          
+          
+          </div> 
+
+          <div id="scores">
+            <h2 id="10score1"> </h2>
+            <h2 id="10score2"> </h2>
+          </div>
+
+
+          
+
+          <div id="teamnames">
+            <h2 id="11team1name"></h2>   
+            <h2 id="11team2name"></h2>
+          </div>
+          
+
+          
+          <div id='P-STATS0'>
+
+  
+            <button id='11homebut' data-modal-target="#modal22" style="display: none;" >Player Stats</button>
+            <div class="modal" id="modal22">
+              <div class="modal-header">
+                <div class="title">Example Modal</div>
+                <button data-close-button class="close-button">&times;</button>
+              </div>
+              <div class="modal-body"  >
+                <table> 
+                  <thead>
+                    <tr> 
+                      <th> Player </th>
+            <th> Minutes </th>
+            <th> Points </th>
+            <th> Rebounds </th>
+            <th> Assists </th>
+            <th> Blocks </th>
+            <th> Steals </th>
+            <th> FG%</th>
+            <th> 3-PT% </th>
+            <th> Fouls </th>
+            <th> Turnovers </th>
+            <th> +/-</th>
+              
+              
+              
+              
+              
+              
+                    </tr>
+                  </thead>
+                  <tbody id="11box-score-body-home">
+                    <!-- Table body will be dynamically populated with player stats -->
+                     
+                  </tbody> 
+                </table>
+          
+                
+              </div>
+            </div>
+            <div id="overlay"></div> 
+          
+            <a id='11L' href="1" target="_blank" style="display: none;"> Watch Live  </a>
+
+            <button id='11awaybut' data-modal-target="#modal23" style="display: none;" >Player Stats</button>
+            <div class="modal" id="modal23">
+              <div class="modal-header">
+                <div class="title">Example Modal</div>
+                <button data-close-button class="close-button">&times;</button>
+              </div>
+              <div class="modal-body"  >
+                <table> 
+                  <thead>
+                    <tr> 
+                      <th> Player </th>
+            <th> Minutes </th>
+            <th> Points </th>
+            <th> Rebounds </th>
+            <th> Assists </th>
+            <th> Blocks </th>
+            <th> Steals </th>
+            <th> FG%</th>
+            <th> 3-PT% </th>
+            <th> Fouls </th>
+            <th> Turnovers </th>
+            <th> +/-</th>
+              
+              
+              
+              
+              
+                    </tr>
+                  </thead>
+                  <tbody id="11box-score-body-away">
+                    <!-- Table body will be dynamically populated with player stats -->
+                     
+                  </tbody> 
+                </table>
+          
+                
+              </div>
+            </div>
+            <div id="overlay"></div> 
+          
+          
+          </div> 
+
+          <div id="scores">
+            <h2 id="11score1"> </h2>
+            <h2 id="11score2"> </h2>
+          </div>
+
+          <div id="teamnames">
+            <h2 id="12team1name"></h2>   
+            <h2 id="12team2name"></h2>
+          </div>
+          
+          
+          <div id='P-STATS0'>
+
+  
+            <button id='12homebut' data-modal-target="#modal24" style="display: none;" >Player Stats</button>
+            <div class="modal" id="modal24">
+              <div class="modal-header">
+                <div class="title">Example Modal</div>
+                <button data-close-button class="close-button">&times;</button>
+              </div>
+              <div class="modal-body"  >
+                <table> 
+                  <thead>
+                    <tr> 
+                      <th> Player </th>
+                      <th> Minutes </th>
+                      <th> Points </th>
+                      <th> Rebounds </th>
+                      <th> Assists </th>
+                      <th> Blocks </th>
+                      <th> Steals </th>
+                      <th> FG%</th>
+                      <th> 3-PT% </th>
+                      <th> Fouls </th>
+                      <th> Turnovers </th>
+                      <th> +/-</th>
+              
+              
+              
+              
+              
+              
+                    </tr>
+                  </thead>
+                  <tbody id="12box-score-body-home">
+                    <!-- Table body will be dynamically populated with player stats -->
+                     
+                  </tbody> 
+                </table>
+          
+                
+              </div>
+            </div>
+            <div id="overlay"></div> 
+          
+            <a id='12L' href="1" target="_blank" style="display: none;"> Watch Live  </a>
+
+            <button id='12awaybut' data-modal-target="#modal25" style="display: none;" >Player Stats</button>
+            <div class="modal" id="modal25">
+              <div class="modal-header">
+                <div class="title">Example Modal</div>
+                <button data-close-button class="close-button">&times;</button>
+              </div>
+              <div class="modal-body"  >
+                <table> 
+                  <thead>
+                    <tr> 
+                      <th> Player </th>
+            <th> Minutes </th>
+            <th> Points </th>
+            <th> Rebounds </th>
+            <th> Assists </th>
+            <th> Blocks </th>
+            <th> Steals </th>
+            <th> FG%</th>
+            <th> 3-PT% </th>
+            <th> Fouls </th>
+            <th> Turnovers </th>
+            <th> +/-</th>
+              
+              
+              
+              
+              
+              
+                    </tr>
+                  </thead>
+                  <tbody id="12box-score-body-away">
+                    <!-- Table body will be dynamically populated with player stats -->
+                     
+                  </tbody> 
+                </table>
+          
+                
+              </div>
+            </div>
+            <div id="overlay"></div> 
+          
+          
+          </div> 
+
+          <div id="scores">
+            <h2 id="12score1"> </h2>
+            <h2 id="12score2"> </h2>
+          </div>
+        
+          <div id="teamnames">
+            <h2 id="13team1name"></h2>   
+            <h2 id="13team2name"></h2>
+          </div>
+          
+
+
+
+          
+          <div id='P-STATS0'>
+
+  
+            <button id='13homebut' data-modal-target="#modal26" style="display: none;" >Player Stats</button>
+            <div class="modal" id="modal26">
+              <div class="modal-header">
+                <div class="title">Example Modal</div>
+                <button data-close-button class="close-button">&times;</button>
+              </div>
+              <div class="modal-body"  >
+                <table> 
+                  <thead>
+                    <tr> 
+                      <th> Player </th>
+            <th> Minutes </th>
+            <th> Points </th>
+            <th> Rebounds </th>
+            <th> Assists </th>
+            <th> Blocks </th>
+            <th> Steals </th>
+            <th> FG%</th>
+            <th> 3-PT% </th>
+            <th> Fouls </th>
+            <th> Turnovers </th>
+            <th> +/-</th>
+              
+              
+              
+              
+              
+              
+                    </tr>
+                  </thead>
+                  <tbody id="13box-score-body-home">
+                    <!-- Table body will be dynamically populated with player stats -->
+                     
+                  </tbody> 
+                </table>
+          
+                
+              </div>
+            </div>
+            <div id="overlay"></div> 
+          
+            <a id='13L' href="1" target="_blank" style="display: none;"> Watch Live  </a>
+
+            <button id='13awaybut' data-modal-target="#modal27" style="display: none;" >Player Stats</button>
+            <div class="modal" id="modal27">
+              <div class="modal-header">
+                <div class="title">Example Modal</div>
+                <button data-close-button class="close-button">&times;</button>
+              </div>
+              <div class="modal-body"  >
+                <table> 
+                  <thead>
+                    <tr> 
+                      <th> Player </th>
+                      <th> Minutes </th>
+                      <th> Points </th>
+                      <th> Rebounds </th>
+                      <th> Assists </th>
+                      <th> Blocks </th>
+                      <th> Steals </th>
+                      <th> FG%</th>
+                      <th> 3-PT% </th>
+                      <th> Fouls </th>
+                      <th> Turnovers </th>
+                      <th> +/-</th>
+              
+              
+              
+              
+              
+              
+                    </tr>
+                  </thead>
+                  <tbody id="13box-score-body-away">
+                    <!-- Table body will be dynamically populated with player stats -->
+                     
+                  </tbody> 
+                </table>
+          
+                
+              </div>
+            </div>
+            <div id="overlay"></div> 
+          
+          
+          </div> 
+
+
+          <div id="scores">
+            <h2 id="13score1"> </h2>
+            <h2 id="13score2"> </h2>
+          </div>
+          
+        
+        
+
+  </div>
+  <script src="nbastats.js"></script>
+</body>
+</html>
