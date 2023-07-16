@@ -18,6 +18,37 @@ const gameid = '14620';
 
 const linkformat = 'https://www.thestreameast.to/nba/';
 
+function clearGameElements(index) {
+  const team1nameElement = document.getElementById(`${index}team1name`);
+  const team2nameElement = document.getElementById(`${index}team2name`);
+  const team1scoreElement = document.getElementById(`${index}score1`);
+  const team2scoreElement = document.getElementById(`${index}score2`);
+  const linkElement = document.getElementById(`${index}L`);
+  const homeTableBody = document.getElementById(`${index}box-score-body-home`);
+  const awayTableBody = document.getElementById(`${index}box-score-body-away`);
+
+  team1nameElement.innerText = "";
+  team2nameElement.innerText = "";
+  team1scoreElement.innerText = "";
+  team2scoreElement.innerText = "";
+  linkElement.href = "";
+  linkElement.textContent = "";
+  homeTableBody.innerHTML = "";
+  awayTableBody.innerHTML = "";
+
+  const homebut = document.getElementById(`${index}homebut`);
+  homebut.style.display = "none";
+
+
+  const awaybut = document.getElementById(`${index}awaybut`);
+  awaybut.style.display = "none";
+
+
+
+  
+
+}
+
 /*
 
 fetch(`${apiUrlBox}/BoxScore/${gameid}?key=${apiKey}`)
@@ -79,6 +110,8 @@ awayPlayers.forEach((player) => {
 */
 
 /* go back to live and starting at live works. just needs to change the date to the current date. */
+
+var gameslive = 0;
 let counter = 0;
 fetch(`${apiUrl}/GamesByDate/${date}?key=${apiKey}`)
   .then(response => response.json())
@@ -100,6 +133,7 @@ fetch(`${apiUrl}/GamesByDate/${date}?key=${apiKey}`)
       team1scoreElement.innerText = team1score;
       team2scoreElement.innerText = team2score;
       const yuh = game.GameID;
+      gameslive+=1; 
       
       //fetch(`${apiUrlBox}/BoxScore/${GameID}?key=${apiKey}`)
 
@@ -362,6 +396,9 @@ submitButton.addEventListener('click', (event) => {
     titleText.innerText = date + " STATS"; 
     let counter = 0;
 
+    for (let i =0; i < gameslive;i++) {
+      clearGameElements(i);
+    }
 
 
 
