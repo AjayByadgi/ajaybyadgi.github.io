@@ -173,7 +173,7 @@ const homeTeamFullName = data.TeamGames.find(team => team.Team === game.HomeTeam
           console.log(`${linkformat}${final}-2/`);
           link.href = (`${linkformat}${final}-2/`);
           link.style.display = "block";
-          link.textContent = `${homeTeamFullName} @ ${awayTeamFullName}`;
+          link.textContent = `${awayTeamFullName} @ ${homeTeamFullName}` ;
 
 
 
@@ -763,7 +763,7 @@ const putin = `${linkformat}${final}-2/`;
 console.log(`${linkformat}${final}-2/`);
 link.href = (`${linkformat}${final}-2/`);
 link.style.display = "block";
-link.textContent = `${homeTeamFullName} @ ${awayTeamFullName}`;
+link.textContent = `${awayTeamFullName} @ ${homeTeamFullName}`;
 
 
 
