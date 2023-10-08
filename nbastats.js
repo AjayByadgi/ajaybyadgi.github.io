@@ -13,7 +13,7 @@ const day = String(currentDate.getDate()).padStart(2, '0');
 const formattedDate = `${year}-${month}-${day}`; 
 
 
-let date = '2022-01-12';
+let date = formattedDate;
 const gameid = '14620'; 
 
 const linkformat = 'https://www.thestreameast.to/nba/';
@@ -113,9 +113,16 @@ awayPlayers.forEach((player) => {
 
 var gameslive = 0;
 let counter = 0;
-fetch(`${apiUrl}/GamesByDate/${date}?key=${apiKey}`)
+fetch(`${apiUrl}/GamesByDate/${formattedDate}?key=${apiKey}`)
   .then(response => response.json())
   .then(data => {
+
+    if (data.length === 0) {
+      var Title = document.getElementById("title-text");
+      Title.innerText = "NO GAMES TODAY";
+
+    }
+
     // Iterate through the data array and update HTML elements
     data.forEach((game, index) => {
       const team1name = game.HomeTeam;
@@ -399,6 +406,7 @@ submitButton.addEventListener('click', (event) => {
     for (let i =0; i < gameslive;i++) {
       clearGameElements(i);
     }
+    gameslive = 0;
 
 
 
@@ -407,6 +415,7 @@ fetch(`${apiUrl}/GamesByDate/${date}?key=${apiKey}`)
   .then(data => {
     // Iterate through the data array and update HTML elements
     data.forEach((game, index) => {
+      gameslive++;
       const team1name = game.HomeTeam;
       const team2name = game.AwayTeam;
       const team1score = game.HomeTeamScore;
@@ -676,11 +685,23 @@ homebut.addEventListener('click', (event) => {
     textitle.innerText = "NBA LIVE STATS";
 
 
-    const date1 = '2022-01-12';
+    //const date1 = '2022-01-12';
     let counter = 0;
-fetch(`${apiUrl}/GamesByDate/${date1}?key=${apiKey}`)
+
+    for (let i =0; i < gameslive;i++) {
+      clearGameElements(i);
+    }
+
+
+fetch(`${apiUrl}/GamesByDate/${formattedDate}?key=${apiKey}`)
   .then(response => response.json())
   .then(data => {
+    
+    if (data.length === 0) {
+      var Title = document.getElementById('title-text');
+      Title.innerText = "NO GAMES TODAY";
+    }
+
     // Iterate through the data array and update HTML elements
     data.forEach((game, index) => {
       const team1name = game.HomeTeam;
@@ -1009,7 +1030,6 @@ function closeModal(modal) {
   modal.classList.remove('active')
   overlay.classList.remove('active')
 } 
-
 
 
 
