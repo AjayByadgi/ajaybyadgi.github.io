@@ -13,7 +13,7 @@ const day = String(currentDate.getDate()).padStart(2, '0');
 const formattedDate = `${year}-${month}-${day}`; 
 
 
-let date = formattedDate;
+let date = '2022-01-12';
 const gameid = '14620'; 
 
 const linkformat = 'https://www.thestreameast.to/nba/';
@@ -173,7 +173,7 @@ const homeTeamFullName = data.TeamGames.find(team => team.Team === game.HomeTeam
 
           const formathome = homeTeamFullName.replace(/\s+/g, '-');
           const formataway = awayTeamFullName.replace(/\s+/g, '-');
-          const final = formataway+'-'+formathome;
+          const final = formathome+'-'+formataway;
           const link = document.getElementById(`${index}L`);
           const putin = `${linkformat}${final}-2/`;
 
@@ -406,7 +406,6 @@ submitButton.addEventListener('click', (event) => {
     for (let i =0; i < gameslive;i++) {
       clearGameElements(i);
     }
-    gameslive = 0;
 
 
 
@@ -415,7 +414,6 @@ fetch(`${apiUrl}/GamesByDate/${date}?key=${apiKey}`)
   .then(data => {
     // Iterate through the data array and update HTML elements
     data.forEach((game, index) => {
-      gameslive++;
       const team1name = game.HomeTeam;
       const team2name = game.AwayTeam;
       const team1score = game.HomeTeamScore;
